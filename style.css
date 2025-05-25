@@ -1,9 +1,18 @@
 /* Add your CSS here */
 
+/* Font Face */
+@font-face {
+  font-family: 'Neo Sans';
+  src: url('fonts/NeoSans-Bold.woff2') format('woff2'),
+       url('fonts/NeoSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* Hero Section Styles */
 header {
-  /* Intel blue background */
-  background-color: #0071c5;
+  /* Intel blue gradient background */
+  background: linear-gradient(90deg, #21a9e1 0%, #0071c5 100%);
   /* Make header take full width and remove default margin */
   width: 100vw;
   margin: 0;
@@ -17,6 +26,8 @@ header {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  font-family: 'Neo Sans', Arial, sans-serif;
+  font-weight: bold;
 }
 
 header img {
@@ -35,16 +46,22 @@ header h1 {
 
 header p {
   /* Subheading style */
-  color: #e0e0e0; /* Light gray for softer contrast */
+  color: #ffffff; /* Light gray for softer contrast */
   font-size: 1.2em;
   max-width: 600px;
   margin: 0 auto;
+  font: neo sans, bold;
 }
 
 body {
   /* Remove default margin from body */
   margin: 0;
   padding: 0;
+}
+
+/* Center all paragraphs by default */
+p {
+  text-align: center;
 }
 
 /* End of Hero Section Styles */
@@ -84,12 +101,13 @@ section .timeline-card {
   flex: 0 0 260px;
   padding: 20px;
   box-sizing: border-box;
-  transition: box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section .timeline-card:hover {
   /* Simple hover effect */
-  box-shadow: 0 4px 16px rgba(0,113,197,0.15);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 113, 197, 0.2);
   border-color: #0071c5;
 }
 
@@ -115,6 +133,23 @@ section .timeline-card img {
 section .timeline-card p {
   font-size: 1em;
   color: #444;
+}
+
+/* Reveal extra details on card hover */
+.timeline-card .extra-detail {
+  /* Hide by default */
+  display: none;
+  color: #0071c5;
+  font-size: 0.98em;
+  margin-top: 10px;
+  background: #f0f8ff;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.timeline-card:hover .extra-detail {
+  /* Show on hover */
+  display: block;
 }
 
 /* Responsive: Stack cards vertically on small screens */
